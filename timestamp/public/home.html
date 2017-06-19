@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang=en> 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Unix timestamp service">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Timestamp microservice</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans"  
+          rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+
+  </head>
+  <body>
+    <main>
+
+      <h1>Timestamp microservice</h1>
+
+      <div class="text-box">
+        <h2>Example usage:</h2>
+        <h5>
+          Accepts dates in a valid
+          <a href="https://en.wikipedia.org/wiki/ISO_8601">
+          ISO_8601
+          </a>
+           format
+        </h5>
+        <p>
+          <span class="example">
+            https://kc-timestamp.herokuapp.com/December%2015%202016
+          </span>
+        </p>
+        <p>
+          <span class="example">
+            https://kc-timestamp.herokuapp.com/1450137600
+          </span>
+        </p>
+        <p>
+          <span class="example">
+            https://kc-timestamp.herokuapp.com/12-15-2015
+          </span>
+        </p>
+      </div>
+
+      <div class="text-box">
+        <h2>Example output:</h2>
+        <p>
+          <span class="example">
+            { "unix": 1450137600, "natural": "December 15, 2015" }
+          </span>
+        </p>
+      </div>
+
+    </main>
+    
+  </body>
+</html>

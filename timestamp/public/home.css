@@ -1,0 +1,39 @@
+main {
+  margin: 50px 100px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  letter-spacing: .1em;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h5 {
+  font-weight: 400;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.text-box {
+  padding-left: 30px;
+  border-left: 3px solid lightgray;
+  margin-top: 50px;
+}
+
+.example {
+  font-size: 15px;
+  color: #d32f2f;
+  font-family: serif;
+  background-color: #bdbdbd;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: .03em;
+  margin-top: 10px;
+}
+
