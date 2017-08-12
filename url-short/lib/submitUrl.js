@@ -4,7 +4,6 @@ const $ = require('./shortener.js');
 /**
  * db is a refernece to a Database
  * res is a reference to a response object
- * 
  */
 
 function *submitUrl(db, res, url, appUrl) {
@@ -30,11 +29,11 @@ function *submitUrl(db, res, url, appUrl) {
 
 
   try {
-    let counter = yield $.getNextCounter(db);
-    counter = counter.value.lastIdx;
-    const short = appUrl + '/' + $.encode(counter);
+    const counter = yield $.getNextCounter(db);
+    const hash = $.encode(counter.value.lastIdx);
+    const short = appUrl + '/' + hash;
 
-    yield $.saveUrls(db, url, short);
+    yield $.saveUrls(db, url, hash);
     res.json({long_url: url, short_url: short});
   }
   catch(e) {

@@ -16,6 +16,7 @@ module.exports = {
       else {
         reject();
       }
+  
  });
 },
 
@@ -39,7 +40,7 @@ module.exports = {
           resolve();
         }
         else {
-          reject();
+          reject(doc.short_url);
         }
       },
       (err) => {

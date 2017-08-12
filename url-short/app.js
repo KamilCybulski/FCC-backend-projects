@@ -2,8 +2,9 @@ const express = require('express');
 const config = require('./credentials/config.js')
 const assert = require('assert');
 const Mongo = require('mongodb');
-const run = require('./lib/genRunner.js');
-const submitUrl = require('./lib/submitNewUrl.js');
+const run = require('./lib/generatorRunner.js');
+const submitUrl = require('./lib/submitUrl.js');
+const redirectUser = require('./lib/redirectUser.js');
 
 
 const app = express();
@@ -23,7 +24,14 @@ app.get('/submit/*', (req, res) => {
 
 
 app.get('/*', (req, res) => {
-  res.send(encode(Date.now()));
+
+  const input = req.originalUrl.slice(1);
+  console.log(input);
+  Mongo.connect(config.URL, (err, db) => {
+    assert.equal(null, err);
+
+    redirectUser(db, res, input);
+  });
 });
 
 
