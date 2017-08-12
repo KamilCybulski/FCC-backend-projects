@@ -8,7 +8,7 @@ module.exports = {
   checkIfValid: function (url) {
     return new Promise((resolve, reject) => {
 
-      const regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+      const regexp = /(http[s]?\:\/\/).*/;
 
       if(regexp.test(url)) {
         resolve();
@@ -16,7 +16,6 @@ module.exports = {
       else {
         reject();
       }
-  
  });
 },
 

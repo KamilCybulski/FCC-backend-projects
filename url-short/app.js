@@ -12,7 +12,7 @@ const app = express();
 
 app.get('/submit/*', (req, res) => {
 
-  const input = req.path.slice(8);
+  const input = req.url.slice(8);
   const appUrl = `${req.protocol}://${req.get('host')}`;
 
   Mongo.connect(config.URL, (err, db) => {
@@ -26,7 +26,6 @@ app.get('/submit/*', (req, res) => {
 app.get('/*', (req, res) => {
 
   const input = req.originalUrl.slice(1);
-  console.log(input);
   Mongo.connect(config.URL, (err, db) => {
     assert.equal(null, err);
 

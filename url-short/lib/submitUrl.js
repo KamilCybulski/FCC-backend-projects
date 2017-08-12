@@ -14,7 +14,7 @@ function *submitUrl(db, res, url, appUrl) {
   catch (e) {
     console.log(e);
     res.json({error: "Invalid input. Please provide an actual url"});
-    return Promise.reject();
+    return;
   }
 
 
@@ -23,8 +23,8 @@ function *submitUrl(db, res, url, appUrl) {
   }
   catch(e) {
     db.close();
-    res.json({error: `This url has been already shortened: ${e}`});
-    return Promise.reject();
+    res.json({error: `This url has been already shortened: ${appUrl+ '/' + e}`});
+    return;
   }
 
 
@@ -40,7 +40,7 @@ function *submitUrl(db, res, url, appUrl) {
     db.close();
     console.log(e);
     res.json({error: "Internal server error"});
-    return Promise.reject();
+    return;
   }
 
 }
