@@ -4,6 +4,8 @@ const $ = require('./shortener.js');
 /**
  * db is a refernece to a Database
  * res is a reference to a response object
+ * url is String - a url submitted by user
+ * appUrl is String - app's base url
  */
 
 function *submitUrl(db, res, url, appUrl) {

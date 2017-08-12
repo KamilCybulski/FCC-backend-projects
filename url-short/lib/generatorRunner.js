@@ -3,6 +3,9 @@
  * https://github.com/getify/You-Dont-Know-JS/blob/master/async
  * %20%26%20performance/ch4.md
  * 
+ * Takes a promise-aware generator, initializes it and exhausts
+ *  recieved iterator. If any of the promises is rejected, it throws
+ * an error and sends it back to the generator=
  */
 
 function run(gen, ...args) {
