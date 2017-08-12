@@ -1,5 +1,6 @@
 ### cofing and credential files ###
-credentials/
+credentials
+config
 
 ### Dependencies ###
 node_modules
