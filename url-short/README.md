@@ -31,3 +31,7 @@
    ```bash
     db.counters.insertOne({colName: "urls", lastIdx: 10000})
    ```
+
+5. Currently the app considers everythig that starts with `http://` 
+   or `https://` to be a valid url. This can be easily changed by modifying
+   the regexp used in `./lib/shortener.js`
