@@ -1,0 +1,37 @@
+main {
+  width: 100%;
+  display: flex;
+  margin-left: 15px;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 11px;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+  cursor: pointer;
+}
+
+.subtitle {
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.example {
+  background-color: lightgray;
+  color: red;
+  padding: 5px;
+  border-radius: 3px;
+  line-height: 2em;
+}

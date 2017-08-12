@@ -1,5 +1,5 @@
 const express = require('express');
-const config = require('./credentials/config.js')
+const config = require('./config/config.js')
 const assert = require('assert');
 const Mongo = require('mongodb');
 const run = require('./lib/generatorRunner.js');
@@ -8,7 +8,7 @@ const redirectUser = require('./lib/redirectUser.js');
 
 
 const app = express();
-
+app.use(express.static(__dirname + "/public"));
 
 app.get('/submit/*', (req, res) => {
 
@@ -20,6 +20,11 @@ app.get('/submit/*', (req, res) => {
 
     run(submitUrl, db, res, input, appUrl);
   });
+});
+
+
+app.get('/docs', (req, res) => {
+  res.sendFile(__dirname + "/public/docs.html");
 });
 
 
