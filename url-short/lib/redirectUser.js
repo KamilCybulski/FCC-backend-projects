@@ -20,12 +20,12 @@
         res.redirect(doc.long_url);
       }
       else {
-        res.send(`Sorry, no such url in our database.`)
+        res.json({error: `No such url database.`})
       }
     },
     (err) => {
       console.log(err);
-      res.send("Connection error");
+      res.json({error: "Connection error"});
     }
   )
  }
