@@ -1,0 +1,22 @@
+{
+  "name": "image-abstraction-layer",
+  "version": "1.0.0",
+  "description": "Image search abstraction layer project for FCC backend cert",
+  "main": "app.js",
+  "repository": "https://github.com/KamilCybulski/FCC-backend-projects.git",
+  "author": "kamyl",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0"
+  }
+}
