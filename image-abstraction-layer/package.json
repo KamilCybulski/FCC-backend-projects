@@ -16,6 +16,8 @@
     "mongodb": "^2.2.31"
   },
   "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
     "mocha": "^3.5.0",
     "nodemon": "^1.11.0"
   }

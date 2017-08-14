@@ -1,6 +1,13 @@
-### cofing and credential files ###
+### Cofing and Credentials ###
 credentials
 config
 
 ### Dependencies ###
 node_modules
+
+### Logs
+yarn-debug.log*
+yarn-error.log*
+
+### Tests ###
+test
