@@ -1,0 +1,38 @@
+main {
+  margin-left: 10px;
+  font-family: 'PT Sans', sans-serif;
+  line-height: 2em;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h6 {
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+  cursor: pointer;
+}
+
+.box {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.code-example {
+  padding: 5px;
+  background-color: lightgray;
+  color: red;
+  width: 340px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.subheader {
+  font-size: 20px;
+  font-weight: 700;
+}

@@ -6,9 +6,48 @@
     <title>Image search abstraction layer</title>
     <meta name="description" content="Image search abstraction layer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
   </head>
   <body>
-    <h1>XYZ image search abstraction layer</h1>
+    <main>
+      <h1>XYZ image search abstraction layer</h1>
+      <h6>created by kamyl, see the
+        <a href="https://github.com/KamilCybulski/FCC-backend-projects/tree/master/image-abstraction-layer">
+          source code
+        </a>
+      </h6>
+      <div class="box">
+
+        <p class="subheader">The main api endpoint is:</p>
+        <p class="code-example">https://xyz/images</p>
+        <p class="subheader">
+          There are 3 query parameters:
+          <ul>
+            <li>
+              <span class=code-example>q</span> - mandatory, the search query
+            </li>
+            <li>
+              <span class=code-example>offset</span> - optional, for pagination
+            </li>
+            <li>
+              <span class=code-example>count</span> - optional, number of results
+            </li>
+          </ul>
+        </p>
+        <p class="subheader">Example url:</p>
+        <p class="code-example">https://xyz/images&q=cats&offset=10&count=20</p>
+    
+      </div>
+      <div class="box">
+        <p class="subheader">
+          Url to get 10 last search queries:
+        </p>
+         <p class="code-example">https://xyz/history</p>
+      </div>
+    </main>
     
   </body>
 </html>
