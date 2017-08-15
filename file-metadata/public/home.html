@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>File metadata microservice</title>
+    <meta name="description" content="File metadata microservice">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>XYZ File metadata microservice</h1>
+      <p>Submit a file to see it's size</p>
+      <div class="form-container">
+        <form action="/size" method="post" enctype="multipart/form-data">
+          <input type="file" name="file">
+          <input type="submit">
+        </form>
+      </div>
+
+    </div>
+  </body>
+</html>
