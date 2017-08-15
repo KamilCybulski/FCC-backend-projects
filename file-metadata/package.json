@@ -1,0 +1,22 @@
+{
+  "name": "file-metadata",
+  "version": "1.0.0",
+  "description": "File metadata microservice project for FCC backend cert",
+  "main": "app.js",
+  "repository": "https://github.com/KamilCybulski/FCC-backend-projects",
+  "author": "kamyl",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0"
+  }
+}
