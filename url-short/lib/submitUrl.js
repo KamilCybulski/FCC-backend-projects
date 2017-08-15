@@ -14,7 +14,6 @@ function *submitUrl(db, res, url, appUrl) {
     yield $.checkIfValid(url);
   }
   catch (e) {
-    console.log(e);
     res.json({error: "Invalid input. Please provide an actual url"});
     return;
   }
@@ -36,11 +35,11 @@ function *submitUrl(db, res, url, appUrl) {
     const short = appUrl + '/' + hash;
 
     yield $.saveUrls(db, url, hash);
+    db.close();
     res.json({long_url: url, short_url: short});
   }
   catch(e) {
     db.close();
-    console.log(e);
     res.json({error: "Internal server error"});
     return;
   }
