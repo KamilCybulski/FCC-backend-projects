@@ -9,8 +9,8 @@ module.exports = {
  */
 getData: function(query, offset, count) {
 
-  const offsetParam = offset ? `&offset=${offset}` : "";
-  const countParam = count ? `&count=${count}` : "";
+  const offsetParam = offset ? `&offset=${offset}` : "&offset=1";
+  const countParam = count ? `&count=${count}` : "&count=10";
 
   const url = `https://api.qwant.com/api/search/images?q=${query + offsetParam + countParam}`;
 
@@ -56,14 +56,19 @@ saveToDB: function(db, query) {
 
 
 /**
- * Res Obj -> null
+ * Res Obj -> undefined
  * Res is a reference to the response object
  * Obj is an object that containes parsed search results
  * Displays results to the user in json format
  */
 displayResults: function(res, obj) {
   return res.json(obj);
-}
+},
+
+
+/**
+ * Db -> undefined
+ */
 
 }
 

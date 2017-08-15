@@ -25,7 +25,7 @@ function *sendImgData (db, res, query, offset, count) {
 
 
   try {
-    yield displayResults(res, parseData(data))
+    displayResults(res, parseData(data))
   }
   catch(e) {
     return res.json({status: "fail", error: "Cannot display data"});
