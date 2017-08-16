@@ -1,56 +1,44 @@
 const express = require('express');
-const MongoClient = require('mongodb');
+const assert = require('assert');
+const MongoClient = require('mongodb').MongoClient;
 const config = require('./config/config.js');
-const sendImgData = require('./lib/send-image-data.js');
-const run = require('./lib/run.js');
-const getHistory = require('./lib/get-search-history.js').getHistory;
+
+const getSearchResults = require('./lib/get-search-results.js');
+const getSearchHistory = require('./lib/get-search-history.js');
 
 const app = express();
+let db;
 
 app.use(express.static(__dirname + "/public"));
 
+MongoClient.connect(config.dbURL, (err, database) => {
+  assert.equal(null, err);
+  db = database;
+
+  app.listen(config.PORT, () => {
+    console.log(`Server is listening on port ${config.PORT}. Press CTRL + C to terminate.`);
+  });
+});
+
+
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/public/home.html");
+  res.sendFile(__dirname + '/public/home.html');
 });
 
 
 app.get('/images', (req, res) => {
-  const query = req.query.q;
-  const offset = req.query.offset;
-  const count = req.query.count;
 
-  MongoClient.connect(config.dbURL, (err, db) => {
-    if(err) {
-      return res.json({status: "fail", error: "No database connection"});
-    }
-    else {
-      return run(sendImgData, db, res, query, offset, count);
-    }
-    
-  });
+  if(!req.query.q) {
+    res.json({status: "failed", error: "No query"});
+  }
+  else {
+    const {q, offset, count} = req.query;
+    getSearchResults(q, offset, count, res, db);
+  }
+
 });
 
 
 app.get('/history', (req, res) => {
-
-  MongoClient.connect(config.dbURL, (err, db) => {
-    if(err) {
-      return res.json({status: "fail", error: "No database connection"});
-    }
-    else {
-      getHistory(db)
-        .then((history) => res.json({status: "success", history: history}))
-        .catch((err) => res.json({status: "fail", error: "Database error"}))
-        .then(() => db.close())
-    }
-  });
-});
-
-
-
-
-
-
-app.listen(config.PORT, () => {
-  console.log(`Server listening on port ${config.PORT}. Press CTRL + C to terminate.`);
+  getSearchHistory(db, res); 
 });
